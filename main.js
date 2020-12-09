@@ -37,18 +37,30 @@ afficheHeure(midi);
 /* Lundi 07/12 - Algo de tri */
 
 let array1 = createRandomArray(10);
-affiche("Original : " + array1 + '\n');
+
+affiche("Original : " + array1 + '\n\n');
+
 affiche("Tri par sélection : " + selectionSort(array1) + '\n\n');
 
 let array2 = createRandomArray(10);
 affiche("Original : " + array2 + '\n');
 affiche("Tri à bulle : " + bubbleSort(array2) + '\n\n');
 
+let array4 = createRandomArray(10);
+affiche("Original : " + array4 + '\n');
+affiche("Tri à bulle inversé: " + bubbleSort(array4) + '\n\n');
+
 let array3 = createRandomArray(10);
 affiche("Original : " + array3 + '\n');
 affiche("Tri par insertion : " + insertionSort(array3) + '\n\n');
 
+let array5 = createRandomArray(10);
+affiche("Original : " + array5 + '\n');
+affiche("Tri par insertion : " + fusionSort(array5) + '\n\n');
 
+let array6 = createRandomArray(5);
+affiche("Original : " + array6 + '\n');
+affiche("Tri comptage : " + countingSort(array6) + '\n\n');
 
 /* Mardi 08/12 - Récursivité */
 
