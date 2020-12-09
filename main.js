@@ -34,31 +34,31 @@ afficheHeure(midi);
 
 */
 
-/* Lundi 07/12 - Algo de tri
+/* Lundi 07/12 - Algo de tri */
 
 let array1 = createRandomArray(10);
 affiche("Original : " + array1 + '\n');
-affiche("Trié : " + selectionSort(array1) + '\n\n');
+affiche("Tri par sélection : " + selectionSort(array1) + '\n\n');
 
 let array2 = createRandomArray(10);
 affiche("Original : " + array2 + '\n');
-affiche("Trié : " + bubbleSort(array2) + '\n\n');
+affiche("Tri à bulle : " + bubbleSort(array2) + '\n\n');
 
-let array3 = createRandomArray(4);
+let array3 = createRandomArray(10);
 affiche("Original : " + array3 + '\n');
-affiche("Trié : " + insertionSort(array3) + '\n\n');
+affiche("Tri par insertion : " + insertionSort(array3) + '\n\n');
 
-*/
+
 
 /* Mardi 08/12 - Récursivité */
 
-var minuit = creeHeure();
-afficheHeure(minuit);
+// var minuit = creeHeure();
+// afficheHeure(minuit);
 
-avanceHeureNbSecondeRec(minuit, 60);
-afficheHeure(minuit);
+// avanceHeureNbSecondeRec(minuit, 60);
+// afficheHeure(minuit);
 
-affiche('4! = ' + fact(4) + '\n');
+// affiche('4! = ' + fact(4) + '\n');
 
 /* Détails de factorielle de 4 
 
@@ -73,8 +73,8 @@ Donc on peut réaliser le calcul : 4 * 3 * 2 * 1 * 1 = 24
 
 */
 
-affiche('fibo(8) = ' + fibo(8)+ '\n');
-affiche('fibo(13) = ' + fibo(13)+ '\n');
+// affiche('fibo(8) = ' + fibo(8)+ '\n');
+// affiche('fibo(13) = ' + fibo(13)+ '\n');
 
 /* Détails de Fibonacci de 8 
 
@@ -93,13 +93,13 @@ Donc on peut faire le calcul : 13 + 8
 
 */
 
-affiche('syracuse(15) : ') ; syracuse(15);
-affiche('syracuse(5) : ') ; syracuse(5);
-affiche('syracuse(12) : ') ; syracuse(12);
+// affiche('syracuse(15) : ') ; syracuse(15);
+// affiche('syracuse(5) : ') ; syracuse(5);
+// affiche('syracuse(12) : ') ; syracuse(12);
 
-affiche('pgcd(21, 72) : ' + pgcd(21, 72) + '\n');
-affiche('pgcd(12, 4) : ' + pgcd(12, 4) + '\n');
-affiche('pgcd(33, 14) : ' + pgcd(33, 14) + '\n');
+// affiche('pgcd(21, 72) : ' + pgcd(21, 72) + '\n');
+// affiche('pgcd(12, 4) : ' + pgcd(12, 4) + '\n');
+// affiche('pgcd(33, 14) : ' + pgcd(33, 14) + '\n');
 
 /* Détails du pgcd (plus grand commun diviseur)
 
@@ -112,10 +112,10 @@ A    B       R(=A % B)
 
 */
 
-affiche('Nb de \'o\' dans coucou : ' + occurence('coucou', 'o') + '\n');
-affiche('Nb de \'t\' dans anticonstitutionnellement  : ' + occurence('anticonstitutionnellement ', 't') + '\n');
+// affiche('Nb de \'o\' dans coucou : ' + occurence('coucou', 'o') + '\n');
+// affiche('Nb de \'t\' dans anticonstitutionnellement  : ' + occurence('anticonstitutionnellement ', 't') + '\n');
 
-affiche('4! = ' + factTerm(4) + '\n');
+// affiche('4! = ' + factTerm(4) + '\n');
 
 /* Détails de la factorielle avec une récursivité terminale
 
@@ -128,7 +128,7 @@ factTerm(4, res=1)
 
 */
 
-affiche('fibo(8) = ' + fiboTerm(8)+ '\n');
+// affiche('fibo(8) = ' + fiboTerm(8)+ '\n');
 
 /* Détails
 
