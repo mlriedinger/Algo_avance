@@ -1,8 +1,11 @@
 /* Fonctions de tri 
-    * tri par sélection
-    * tri à bulle
+    * tri par sélection (selection sort)
+    * tri à bulle (bubble sort)
     * tri à bulle inversé
-    * tri par insertion
+    * tri par insertion / 2 méthodes (insertion sort)
+    * tri comptage / 2 méthodes (couting sort)
+    * tri fusion / 2 méthodes (merge sort)
+    * tri rapide / 2 méthodes (quick sort)
 */
 
 function selectionSort(array){
@@ -96,52 +99,114 @@ function countingSort(array){
     return res;
 }
 
-// function fusionSort(array){
-//     if(array.length > 1){
-//         let firstPart = array.slice(0, array.length/2);
-//         let fp1 = divideArrayLeft(firstPart);
-//         let fp2 = divideArrayRight(firstPart);
-//         let fp11 = divideArrayLeft(fp1);
-//         let fp12 = divideArrayRight(fp1);
-//         let fp21 = divideArrayLeft(fp2);
-//         let fp22 = divideArrayRight(fp2);
+/* Autre méthode pour le tri comptage
 
-//         let secondPart = array.slice(array.length/2);
-//         let sp1 = divideArrayLeft(secondPart);
-//         let sp2 = divideArrayRight(secondPart);
+function countingSortAlt(array, max){
+    let count = createArray(max + 1);
+    let pos = 0;
+
+    for (let i = 0 ; i < array.length ; i++){
+        count[array[i]]++;
+    }
+
+    for (let i = 0 ; i < max +1 ; i++){
+        for (let j = 0 ; j <= (count[i] -1) ; j++){
+            array[pos] = i;
+            pos++;
+        }
+    }
+    return array;
+}
+
+function createArray(n){
+    let res = [];
+    for (let i = 0 ; i < n ; i++){
+        res.push(0);
+    }
+    return res;
+}
+
+*/
+
+function mergeSort(array){
+    // console.log(array);
+    if(array.length <= 1){
+        return array;
+    }
+    else return merge(mergeSort(array.slice(0, array.length/2)), mergeSort(array.slice(array.length/2)));
+}
+
+function merge(left, right){
+    if(left.length == 0){
+        return right;
+    }
+    else if(right.length == 0){
+        return left;
+    }
+    if(left[0] <= right[0]){
+        return [left[0]].concat(merge(left.slice(1, left.length), right));
+    }
+    else{
+        return [right[0]].concat(merge(left, right.slice(1, right.length)));
+    }
+}
 
 
-//         console.log(firstPart);
-//         console.log(fp1);
-//         console.log(fp11);
-//         console.log(fp12);
+/* Autre méthode pour le tri fusion 
 
-//         console.log(fp2);
-//         console.log(fp21);
-//         console.log(fp22);
+function merge(left, right){
+  
+    var tab = [], l = 0, r = 0;
 
-//         console.log(secondPart);
-//         console.log(sp1);
-//         console.log(sp2);
-//     }
-// }
+    while (l < left.length && r < right.length){
+        if (left[l] < right[r]){
+            tab.push(left[l++]);
+        } else {
+            tab.push(right[r++]);
+        }
+    }
+    return tab.concat(left.slice(l)).concat(right.slice(r));
+}
 
+function sort(tab){
+
+    if (tab.length < 2) {
+        return tab;
+    }
+
+    var mid = Math.floor(tab.length / 2),
+        right = tab.slice(mid),
+        left = tab.slice(0, mid),
+        p = merge(sort(left), sort(right));
+    
+    p.unshift(0, tab.length);
+    tab.splice.apply(tab, p);
+    return tab;
+}
+
+*/ 
+
+function quickSort(array, left = 0, right = array.length -1){
+    if(left < right){
+        let pivot = left;
+        for (let i = left ; i < right ; i++){
+            if(array[i] < array[right]){
+                switchValue(array, i, pivot);
+                pivot ++;
+            }
+        }
+        switchValue(array, pivot, right);
+        quickSort(array, left, pivot -1);
+        quickSort(array, pivot + 1, right);
+    }
+    return array;
+}
 
 /* Fonctions complémentaires 
     * création d'un tableau aléatoire
     * permuter deux valeurs
     * rechercher un minimum
 */
-
-function divideArrayLeft(array){
-    let firstPart = array.slice(0, array.length/2);
-    return firstPart;
-}
-
-function divideArrayRight(array){
-    let secondPart = array.slice(array.length/2);
-    return secondPart;
-}
 
 function createRandomArray(length){
     var array = [];
