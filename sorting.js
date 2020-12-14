@@ -50,7 +50,7 @@ function bubbleSortReverse(array){
 }
 
 function insertionSort(array){
-     for (let i = 1 ; i < array.length - 1 ; i++){  // On parcourt tout le tableau
+     for (let i = 1 ; i < array.length; i++){  // On parcourt tout le tableau
         let temp = array[i];                        // On stocke la valeur actuelle du tableau à l'index i dans une variable temporaire
         j = i-1;                                    // On initialise j à i-1
         while(j >= 0 && array[j] > temp){           // Tant que j >= 0 et que la valeur actuelle à l'index j est > à la variable temporaire
